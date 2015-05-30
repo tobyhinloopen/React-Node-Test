@@ -1,0 +1,8 @@
+bower_components
+node_modules
+.DS_Store
+public/client.js
+public/client.css
+public/client.css.map
+.sass-cache
+

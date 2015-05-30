@@ -1,0 +1,8 @@
+{
+  "name": "react_node_test",
+  "version": "0.0.0",
+  "license": "All Rights Reserved",
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4"
+  }
+}

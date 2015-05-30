@@ -1,0 +1,9 @@
+.house-search-result {
+  .-image-container {
+    @extend .col-xs-3;
+  }
+
+  .-info-container {
+    @extend .col-xs-9;
+  }
+}

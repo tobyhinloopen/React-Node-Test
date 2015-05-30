@@ -10,22 +10,35 @@ module.exports = function(grunt) {
           sourcemap: ENVIROMENT == 'development' ? 'auto' : 'none',
           style: ENVIROMENT == 'development' ? 'expanded' : 'compressed'
         },
-        files: { 'public/client.css': 'client.scss' }
+        files: {
+          'public/frontend.css': 'frontend.scss',
+          'public/backend.css': 'backend.scss'
+        }
       }
     },
     browserify: {
-      options: {
-        path: []
-      },
-      files: {
-        'public/client.js': 'client.js'
+      dist: {
+        files: {
+          'public/frontend.js': 'frontend.js',
+          'public/backend.js': 'backend.js'
+        }
       }
     },
     envify: {
-      'public/client.js': 'public/client.js'
+      dist: {
+        files: {
+          'public/frontend.js': 'public/frontend.js',
+          'public/backend.js': 'public/backend.js'
+        }
+      }
     },
     uglify: {
-      'public/client.js': 'public/client.js'
+      dist: {
+        files: {
+          'public/frontend.js': 'public/frontend.js',
+          'public/backend.js': 'public/backend.js'
+        }
+      }
     }
   });
 

@@ -9,6 +9,7 @@ var app = express();
 
 app.use(require('morgan')('dev'));
 
+app.use(express.static('assets'));
 app.use(express.static('public'));
 app.use(express.static('bower_components/bootstrap-sass/assets/fonts/bootstrap'));
 
@@ -20,4 +21,4 @@ var server = app.listen(process.argv[process.argv.length-1]|0||3000, function ()
   console.log('Listening at http://%s:%s', host, port);
 });
 
-app.use('/home', require('home'));
+app.use('/', require('frontend'));

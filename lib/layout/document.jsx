@@ -7,8 +7,8 @@ module.exports = React.createClass({
   getDefaultProps: function() {
     return {
       title: "",
-      javascripts: ["client.js"],
-      stylesheets: ["client.css"]
+      javascripts: ["frontend.js"],
+      stylesheets: ["frontend.css"]
     };
   },
 

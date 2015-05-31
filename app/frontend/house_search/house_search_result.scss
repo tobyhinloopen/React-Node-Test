@@ -1,4 +1,6 @@
 .house-search-result {
+  @extend .row;
+
   .-image-container {
     @extend .col-xs-3;
   }

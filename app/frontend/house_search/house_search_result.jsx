@@ -6,7 +6,7 @@ module.exports = React.createClass({
           <img src={this.props.thumbnail} alt={this.props.label} width="100%" />
         </div>
         <div className="-info-container">
-          <div className="-info-label">{this.props.label}</div>
+          <a className="-info-label" href={this.props.url}>{this.props.label}</a>
         </div>
       </div>
     );

@@ -1,5 +1,7 @@
-require('app-module-path').addPath(__dirname + '/lib');
-require('app-module-path').addPath(__dirname + '/app');
+var requirePath = require('app-module-path');
+requirePath.addPath(__dirname + '/lib');
+requirePath.addPath(__dirname + '/app');
+
 require('node-jsx').install();
 
 global.React = require('react');

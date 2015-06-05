@@ -2,7 +2,7 @@ var requirePath = require('app-module-path');
 requirePath.addPath(__dirname + '/lib');
 requirePath.addPath(__dirname + '/app');
 
-require('node-jsx').install();
+require('node-jsx').install({ harmony: true });
 
 global.React = require('react');
 global.express = require('express');

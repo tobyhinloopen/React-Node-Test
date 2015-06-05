@@ -1,5 +1,5 @@
-module.exports = React.createClass({
-  render: function() {
+module.exports = class HomeSearchResult extends React.Component {
+  render() {
     return (
       <div className="house-search-result" data-wrap-link>
         <div className="-image-container">
@@ -7,12 +7,11 @@ module.exports = React.createClass({
         </div>
         <div className="-info-container">
           <a className="-info-label" data-font-resize-to-fit href={this.props.url}>{this.props.label}</a>
-          
         </div>
       </div>
     );
   }
-});
+};
 
 // id: 1,
 // url: '/du471',

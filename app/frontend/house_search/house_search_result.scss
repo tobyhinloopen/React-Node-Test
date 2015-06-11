@@ -1,11 +1,37 @@
+@import "vertical_key_value_entry";
+@import "price_label";
+
 .house-search-result {
   @extend .row;
+  border-bottom: 1px solid $hr-border;
+  border-top: 1px solid $hr-border;
+
+  + .house-search-result {
+    border-top: 0;
+  }
+
+  &:hover {
+    background-color: #f6f6f6;
+  }
 
   .-image-container {
     @extend .col-xs-3;
   }
 
+  .-image, .-info-label, .-info-key-value-entries {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .-info-container {
     @extend .col-xs-9;
+  }
+
+  .-info-label {
+    display: block;
+  }
+
+  .-info-key-value-entries {
+    @extend .row;
   }
 }

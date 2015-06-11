@@ -13,12 +13,7 @@ class Document extends React.Component {
           {this.props.stylesheets.map(src => <StylesheetLink src={src} key={src} />)}
         </head>
         <body>
-          <Grid.Container>
-            <Grid.Row>
-              <Grid.Column md={3} />
-              <Grid.Column md={9}>{this.props.children}</Grid.Column>
-            </Grid.Row>
-          </Grid.Container>
+          <Grid.Container>{this.props.children}</Grid.Container>
         </body>
       </html>
     );

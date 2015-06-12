@@ -23,4 +23,5 @@ var server = app.listen(process.argv[process.argv.length-1]|0||3000, function ()
   console.log('Listening at http://%s:%s', host, port);
 });
 
+app.use('/admin', require('admin'));
 app.use('/', require('frontend'));

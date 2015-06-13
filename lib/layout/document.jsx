@@ -22,8 +22,8 @@ class Document extends React.Component {
 
 Document.defaultProps = {
   title: "",
-  javascripts: ["frontend.js"],
-  stylesheets: ["frontend.css"]
+  javascripts: ["/frontend.js"],
+  stylesheets: ["/frontend.css"]
 };
 
 module.exports = Document;

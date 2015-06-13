@@ -1,11 +1,12 @@
-var Document = require('layout/document');
+var AdminDocument = require('layout/admin_document');
+var HousesTable = require('./houses_table');
 
 module.exports = class HomeDocument extends React.Component {
   render() {
     return (
-      <Document>
-        <h1>Er zijn {this.props.houses.length} huizen!</h1>
-      </Document>
+      <AdminDocument title="Huizen" activeNav="admin.houses.index">
+        <HousesTable houses={this.props.houses} />
+      </AdminDocument>
     );
   }
 }

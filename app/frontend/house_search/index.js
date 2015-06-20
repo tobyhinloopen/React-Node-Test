@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
         label: 'Duitsland in de Nederrijn bij Venlo',
         beds: 30,
         bedrooms: 10,
-        average_price_person_night: 3800,
+        averagePricePersonNight: 3800,
         thumbnail: '/du471.jpg'
       }, {
         id: 2,
@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
         label: 'Duitsland in de Nederrijn bij Venlo',
         beds: 30,
         bedrooms: 10,
-        average_price_person_night: 3800,
+        averagePricePersonNight: 3800,
         thumbnail: '/du471.jpg'
       }
     ]

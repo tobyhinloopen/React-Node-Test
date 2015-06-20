@@ -1,0 +1,90 @@
+@import "double_sidebar_center_popup_layout";
+@import "transparent_header";
+@import "logo_with_footer";
+@import "static_image_map";
+
+.house-document-gradient-background {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+
+  $color-a: rgb(154, 189, 224);
+  $color-b: rgb(106, 154, 195);
+  $color-c: rgb( 76, 114, 129);
+  $color-d: rgb( 95, 146, 177);
+
+  background:
+    linear-gradient(  90deg, rgba($color-a, 0) 0%, rgba($color-a, 1) 100%),
+    linear-gradient(   0deg, rgba($color-b, 0) 0%, rgba($color-b, 1) 100%),
+    linear-gradient( -90deg, rgba($color-c, 0) 0%, rgba($color-c, 1) 100%),
+    linear-gradient(-180deg, rgba($color-d, 0) 0%, rgba($color-d, 1) 100%);
+}
+
+.house-document-sidebar-section,
+.house-document-sidebar-section-header,
+.house-document-sidebar-menu-item {
+  border-bottom: 1px solid #ddd;
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}
+
+.house-document-sidebar-section,
+.house-document-content-section {
+  img {
+    width: 100%;
+  }
+}
+
+.house-document-sidebar-section-header,
+.house-document-sidebar-menu-item {
+  padding: 1em 20px 1em 40px;
+  font-weight: bold;
+  font-size: $font-size-small;
+}
+
+
+.house-document-sidebar-section-header {
+  text-transform: uppercase;
+  text-align: center;
+  color: #999;
+}
+
+.house-document-sidebar-menu-item {
+  a {
+    color: $text-color;
+  }
+}
+
+.house-document-content-section {
+  h1, h2, h3 {
+    font-family: $font-family-serif;
+
+    &:first-letter {
+      color: $brand-danger;
+      font-size: 120%;
+    }
+  }
+
+  h1, h2, h3, p {
+    margin: (1em * $line-height-base) 0;
+  }
+
+  h1 { font-size: 180%; }
+  h2 { font-size: 160%; }
+  h3 { font-size: 140%; }
+
+  p.lead {
+    font-size: 120%;
+  }
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .house-document-content-section {
+    font-size: 16px;
+  }
+}

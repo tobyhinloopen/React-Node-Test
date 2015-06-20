@@ -15,7 +15,7 @@ module.exports = class HomeSearchResult extends React.Component {
             <VerticalKeyValueEntry xs="4" label="Slaapkamers">{this.props.bedrooms}</VerticalKeyValueEntry>
             <VerticalKeyValueEntry xs="4" label="Bedden">{this.props.beds}</VerticalKeyValueEntry>
             <VerticalKeyValueEntry xs="4" label="Prijs p. persoon p. nacht">
-              <PriceLabel value={this.props.average_price_person_night} />
+              <PriceLabel value={this.props.averagePricePersonNight} />
             </VerticalKeyValueEntry>
           </div>
         </div>

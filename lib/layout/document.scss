@@ -1,4 +1,10 @@
-$font-family-sans-serif: Arial, sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Cardo);
+
+$font-family-sans-serif: 'Open Sans', Arial, sans-serif;
+$font-family-serif: 'Cardo', 'Times New Roman', 'Times', serif;
 $grid-gutter-width: 20px;
+
+$brand-danger: rgb(227, 50, 51);
+$brand-primary: rgb(50, 160, 230);
 
 @import "bootstrap";

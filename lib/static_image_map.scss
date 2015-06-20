@@ -1,0 +1,76 @@
+.static-image-map {
+  width: auto;
+  position: relative;
+
+  .-marker, .-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+  }
+
+
+  .-marker {
+    $marker-size: 12px;
+    width: $marker-size;
+    height: $marker-size;
+    margin-left: -$marker-size/2;
+    margin-top: -$marker-size/2;
+    border-radius: $marker-size;
+    background-color: $brand-primary;
+    border: 1px solid white;
+  }
+
+  $label-font-size: 10px;
+  $label-heigth: 22px;
+
+  .-label {
+    padding: 0 $label-heigth/2;
+    margin-top: (- $label-heigth - 16px);
+    margin-left: -$label-heigth;
+    line-height: $label-heigth;
+    border: 1px solid white;
+    border-radius: $label-heigth;
+    background-color: black;
+    color: white;
+    font-size: $label-font-size;
+    font-weight: bold;
+    opacity: 0.6;
+  }
+
+  .-label-arrow {
+    $arrow-size: 5px;
+    margin-left: 5px;
+    margin-top: $label-heigth;
+    border-top: $arrow-size solid black;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+
+    &, &:before {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &:before {
+      margin-left: (-$arrow-size - 1);
+      margin-top: -$arrow-size;
+      border-top: $arrow-size+1 solid white;
+      border-left: $arrow-size+1 solid transparent;
+      border-right: $arrow-size+1 solid transparent;
+      content: '';
+      z-index: -1;
+    }
+  }
+
+  .-map {
+    position: relative;
+    height: 0;
+    padding-top: 75%;
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+}

@@ -1,0 +1,56 @@
+@import "layout/document";
+
+$border-color: #ddd;
+
+.double-sidebar-center-popup-layout {
+  @extend .row;
+  background-color: #f6f6f6;
+  overflow: hidden;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  padding: 0;
+  margin: 0;
+
+  .-left {
+    @extend .col-md-2;
+    @extend .hidden-xs;
+    @extend .hidden-sm;
+    padding: 0;
+  }
+
+  .-center {
+    @extend .col-md-7;
+    @extend .col-xs-8;
+    background-color: white;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.1);
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    padding: 6px 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .-right {
+    @extend .col-md-3;
+    @extend .col-xs-4;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .double-sidebar-center-popup-layout .-center {
+    padding: 8px 40px;
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .double-sidebar-center-popup-layout .-center {
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .double-sidebar-center-popup-layout .-center {
+    padding: 12px 60px;
+  }
+}

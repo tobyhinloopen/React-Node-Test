@@ -2,8 +2,14 @@
   background-color: white;
   text-align: center;
   padding: 18px 10px;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   .-logo-wrapper {
+    display: block;
     margin: 7px 20px;
 
     img {
@@ -12,6 +18,7 @@
   }
 
   .-brand {
+    display: block;
     color: black;
     font-family: $font-family-serif;
     font-size: 16px;

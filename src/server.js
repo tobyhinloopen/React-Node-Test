@@ -6,7 +6,7 @@ app.use(require('morgan')('dev'));
 
 app.use(express.static('assets'));
 app.use(express.static('public'));
-app.use(express.static('bower_components/bootstrap-sass/assets/fonts/bootstrap'));
+app.use('/fonts/bootstrap', express.static('bower_components/bootstrap-sass/assets/fonts/bootstrap'));
 
 app.use(require('cookie-parser')());
 

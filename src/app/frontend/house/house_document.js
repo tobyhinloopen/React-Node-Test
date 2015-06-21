@@ -3,6 +3,7 @@ import DoubleSidebarCenterPopupLayout from 'double_sidebar_center_popup_layout';
 import TransparentHeader from 'transparent_header';
 import LogoWithFooter from 'logo_with_footer';
 import StaticImageMap from 'static_image_map';
+import Grid from 'grid';
 
 export default class HouseDocument extends React.Component {
   render() {

@@ -68,9 +68,12 @@
     height: 0;
     padding-top: 75%;
     width: 100%;
+    overflow: hidden;
 
-    background-repeat: no-repeat;
-    background-position: center center;
-
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
   }
 }

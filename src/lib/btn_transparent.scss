@@ -1,0 +1,7 @@
+.btn-transparent {
+  @include button-variant(white, transparent, transparent);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

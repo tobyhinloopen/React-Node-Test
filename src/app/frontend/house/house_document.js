@@ -1,8 +1,9 @@
 import Document from 'layout/document';
-import DoubleSidebarCenterPopupLayout from 'double_sidebar_center_popup_layout';
+import DoubleSidebarLayout from 'double_sidebar_layout';
 import TransparentHeader from 'transparent_header';
 import LogoWithFooter from 'logo_with_footer';
 import StaticImageMap from 'static_image_map';
+import FooterMenu from 'footer_menu';
 
 export default class HouseDocument extends React.Component {
   render() {
@@ -63,6 +64,8 @@ export default class HouseDocument extends React.Component {
           </DoubleSidebarLayout.Right>
 
         </DoubleSidebarLayout>
+
+        <FooterMenu />
 
       </Document>
     );

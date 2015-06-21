@@ -1,11 +1,11 @@
-var Document = require('layout/document');
-var DoubleSidebarCenterPopupLayout = require('double_sidebar_center_popup_layout');
-var TransparentHeader = require('transparent_header');
-var LogoWithFooter = require('logo_with_footer');
-var StaticImageMap = require('static_image_map');
+let Document = require('layout/document');
+let DoubleSidebarCenterPopupLayout = require('double_sidebar_center_popup_layout');
+let TransparentHeader = require('transparent_header');
+let LogoWithFooter = require('logo_with_footer');
+let StaticImageMap = require('static_image_map');
 
-module.exports = React.createClass({
-  render: function() {
+module.exports = class HouseDocument extends React.Component {
+  render() {
     return (
       <Document title={this.props.title}>
         <div className="house-document-gradient-background" />
@@ -66,4 +66,4 @@ module.exports = React.createClass({
       </Document>
     );
   }
-});
+}

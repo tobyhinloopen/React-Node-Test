@@ -1,58 +1,71 @@
+JS_SRC = $(shell find src -name "*.js")
+JS_BUILD = $(subst src,build,$(JS_SRC))
+LIB_SCSS = $(shell find src/lib -name "*.scss")
+FRONTEND_SCSS = $(shell find src/app/frontend -name "*.scss")
 
+default: assets $(JS_BUILD)
+assets: frontend backend
+frontend: assets/frontend.css assets/frontend.js
+backend: assets/backend.css assets/backend.js
 
-# SCSS_STYLE = compressed # expanded or compressed
-#
-# default: clean frontend backend
-#
-# frontend: assets/frontend.js assets/frontend.css
-# backend: assets/backend.js assets/backend.css
-#
-# start: clean frontend backend
-# 	node server.js
-#
-# clean:
-# 	-rm assets/*
-#
-# assets/frontend.css: assets/frontend.postcss.css
-# 	ln assets/frontend.postcss.css assets/frontend.css
-#
-# assets/frontend.postcss.css: assets/frontend.compiled.css
-# 	postcss -u autoprefixer --safe assets/frontend.compiled.css > assets/frontend.postcss.css
-#
-# assets/frontend.compiled.css:
-# 	sass --scss -t $(SCSS_STYLE) -Ilib -Iapp/frontend -Ibower_components/bootstrap-sass/assets/stylesheets frontend.scss > assets/frontend.compiled.css
-#
-# assets/frontend.js: assets/frontend.minified.js
-# 	ln assets/frontend.minified.js assets/frontend.js
-#
-# assets/frontend.minified.js: assets/frontend.envified.js
-# 	uglifyjs --screw-ie8 -mc -- assets/frontend.envified.js > assets/frontend.minified.js
-#
-# assets/frontend.envified.js: assets/frontend.browserified.js
-# 	envify assets/frontend.browserified.js > assets/frontend.envified.js
-#
-# assets/frontend.browserified.js: frontend.js
-# 	NODE_PATH=.:lib:app/frontend browserify frontend.js > assets/frontend.browserified.js
-#
-# assets/backend.css: assets/backend.postcss.css
-# 	ln assets/backend.postcss.css assets/backend.css
-#
-# assets/backend.postcss.css: assets/backend.compiled.css
-# 	postcss -u autoprefixer --safe assets/backend.compiled.css > assets/backend.postcss.css
-#
-# assets/backend.compiled.css:
-# 	sass --scss -t $(SCSS_STYLE) -Ilib -Iapp/backend -Ibower_components/bootstrap-sass/assets/stylesheets backend.scss > assets/backend.compiled.css
-#
-# assets/backend.js: assets/backend.minified.js
-# 	ln assets/backend.minified.js assets/backend.js
-#
-# assets/backend.minified.js: assets/backend.envified.js
-# 	uglifyjs --screw-ie8 -mc -- assets/backend.envified.js > assets/backend.minified.js
-#
-# assets/backend.envified.js: assets/backend.browserified.js
-# 	envify assets/frontend.browserified.js > assets/backend.envified.js
-#
-# assets/backend.browserified.js: backend.js
-# 	NODE_PATH=.:lib:app/backend browserify backend.js > assets/backend.browserified.js
-#
-# .PHONY: frontend backend clean start
+console: $(JS_BUILD)
+	NODE_PATH=build/app:build/lib node build/console.js
+
+start: assets $(JS_BUILD)
+	NODE_PATH=build/app:build/lib node build/server.js
+
+clean:
+	-rm -rf build/* assets/* .depend
+	-mkdir -p build/assets
+
+depend: .depend
+
+.depend: $(JS_SRC)
+	-rm .depend
+	ruby make_depend.rb > .depend
+
+assets/frontend.css: build/assets/frontend.postcss.css
+	-cp build/assets/frontend.postcss.css assets/frontend.css
+
+build/assets/frontend.postcss.css: build/assets/frontend.compiled.css
+	postcss -u autoprefixer --safe build/assets/frontend.compiled.css > build/assets/frontend.postcss.css
+
+build/assets/frontend.compiled.css: src/frontend.scss $(LIB_SCSS) $(FRONTEND_SCSS)
+	sass --scss -Isrc/lib -Isrc/app/frontend -Ibower_components/bootstrap-sass/assets/stylesheets src/frontend.scss > build/assets/frontend.compiled.css
+
+assets/frontend.js: build/assets/frontend.minified.js
+	-cp build/assets/frontend.minified.js assets/frontend.js
+
+build/assets/frontend.minified.js: build/assets/frontend.envified.js
+	uglifyjs --screw-ie8 -mc -- build/assets/frontend.envified.js > build/assets/frontend.minified.js
+
+build/assets/frontend.envified.js: build/assets/frontend.browserified.js
+	envify build/assets/frontend.browserified.js > build/assets/frontend.envified.js
+
+build/assets/frontend.browserified.js: build/frontend.js $(JS_BUILD)
+	NODE_PATH=build/lib:build/app/frontend browserify build/frontend.js > build/assets/frontend.browserified.js
+
+assets/backend.css: build/assets/backend.postcss.css
+	-cp build/assets/backend.postcss.css assets/backend.css
+
+build/assets/backend.postcss.css: build/assets/backend.compiled.css
+	postcss -u autoprefixer --safe build/assets/backend.compiled.css > build/assets/backend.postcss.css
+
+build/assets/backend.compiled.css: src/backend.scss $(LIB_SCSS)
+	sass --scss -Isrc/lib -Isrc/app/backend -Ibower_components/bootstrap-sass/assets/stylesheets src/backend.scss > build/assets/backend.compiled.css
+
+assets/backend.js: build/assets/backend.minified.js
+	-cp build/assets/backend.minified.js assets/backend.js
+
+build/assets/backend.minified.js: build/assets/backend.envified.js
+	uglifyjs --screw-ie8 -mc -- build/assets/backend.envified.js > build/assets/backend.minified.js
+
+build/assets/backend.envified.js: build/assets/backend.browserified.js
+	envify build/assets/backend.browserified.js > build/assets/backend.envified.js
+
+build/assets/backend.browserified.js: src/backend.js $(JS_BUILD)
+	NODE_PATH=build/lib:build/app/backend browserify src/backend.js > build/assets/backend.browserified.js
+
+.PHONY: frontend backend assets clean start console
+
+include .depend

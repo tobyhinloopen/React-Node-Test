@@ -1,9 +1,8 @@
-var app = require('app')();
-
-app.set('views', __dirname);
+var app = express();
+var SearchResultDocument = require('./search_result_document');
 
 app.get('/', function (req, res) {
-  res.render('search_result_document', {
+  res.send(SearchResultDocument.render({
     title: 'Zoekresultaten',
     results: [
       {
@@ -26,7 +25,7 @@ app.get('/', function (req, res) {
         thumbnail: '/du471.jpg'
       }
     ]
-  });
+  }));
 });
 
 module.exports = app;

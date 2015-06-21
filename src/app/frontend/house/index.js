@@ -1,6 +1,5 @@
-var app = require('app')();
-
-app.set('views', __dirname);
+var app = express();
+var HouseDocument = require('./house_document');
 
 var HOUSES = [
   {
@@ -27,7 +26,7 @@ function findHouseByPathName(pathName) {
 app.use('/', function (req, res, next) {
   var house;
   if(req.method == 'GET' && (house = findHouseByPathName(req.url)))
-    res.render('house_document', { house: house, title: house.label });
+    res.send(HouseDocument.render({ house: house, title: house.label }))
   else
     next();
 });

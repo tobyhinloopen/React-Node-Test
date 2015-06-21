@@ -1,9 +1,8 @@
-var app = require('app')();
-
-app.set('views', __dirname);
+var app = express();
+var IndexDocument = require('./index_document');
 
 app.get('/', function (req, res) {
-  res.render("index_document", {
+  res.send(IndexDocument.render({
     title: "Huizen",
     houses: [
       {
@@ -26,7 +25,7 @@ app.get('/', function (req, res) {
         thumbnail: '/du471.jpg'
       }
     ]
-  })
+  }));
 });
 
 module.exports = app;

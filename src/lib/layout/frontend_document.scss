@@ -1,0 +1,24 @@
+@import "layout/double_sidebar_layout";
+@import "layout/transparent_header";
+@import "layout/logo_with_footer";
+@import "layout/footer_menu";
+
+.frontend-document-gradient-background {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+
+  $color-a: rgb(154, 189, 224);
+  $color-b: rgb(106, 154, 195);
+  $color-c: rgb( 76, 114, 129);
+  $color-d: rgb( 95, 146, 177);
+
+  background:
+    linear-gradient(  90deg, rgba($color-a, 0) 0%, rgba($color-a, 1) 100%),
+    linear-gradient(   0deg, rgba($color-b, 0) 0%, rgba($color-b, 1) 100%),
+    linear-gradient( -90deg, rgba($color-c, 0) 0%, rgba($color-c, 1) 100%),
+    linear-gradient(-180deg, rgba($color-d, 0) 0%, rgba($color-d, 1) 100%);
+}

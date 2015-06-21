@@ -1,4 +1,6 @@
 export default class TransparentHeader extends React.Component {
+  actions() {}
+
   render() {
     return (
       <div className="transparent-header">
@@ -14,17 +16,7 @@ export default class TransparentHeader extends React.Component {
           </a>
         </div>
 
-        <div className="-right">
-          <a href="javascript:window.print();" className="-icon-btn">
-            <span className="glyphicon glyphicon-print"></span>
-            Print
-          </a>
-
-          <a href="#" className="-icon-btn">
-            <span className="glyphicon glyphicon-chevron-right"></span>
-            Boek nu
-          </a>
-        </div>
+        <div className="-right">{this.actions()}</div>
       </div>
     );
   }

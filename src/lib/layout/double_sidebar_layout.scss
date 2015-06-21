@@ -18,9 +18,7 @@ $border-color: #ddd;
     padding: 0;
   }
 
-  .-center {
-    @extend .col-md-7;
-    @extend .col-xs-8;
+  .-content, .-center {
     background-color: white;
     box-shadow: 0 -10px 20px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.1);
     border-left: 1px solid $border-color;
@@ -28,6 +26,16 @@ $border-color: #ddd;
     padding: 6px 30px;
     position: relative;
     z-index: 1;
+  }
+
+  .-content {
+    @extend .col-md-10;
+    @extend .col-xs-12;
+  }
+
+  .-center {
+    @extend .col-md-7;
+    @extend .col-xs-8;
   }
 
   .-right {
@@ -38,19 +46,25 @@ $border-color: #ddd;
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  .double-sidebar-layout .-center {
-    padding: 8px 40px;
+  .double-sidebar-layout {
+    .-center, .-content {
+      padding: 8px 40px;
+    }
   }
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  .double-sidebar-layout .-center {
-    padding: 10px 50px;
+  .double-sidebar-layout {
+    .-center, .-content {
+      padding: 10px 50px;
+    }
   }
 }
 
 @media screen and (min-width: $screen-lg-min) {
-  .double-sidebar-layout .-center {
-    padding: 12px 60px;
+  .double-sidebar-layout {
+    .-center, .-content {
+      padding: 12px 60px;
+    }
   }
 }

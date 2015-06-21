@@ -1,6 +1,6 @@
 import Document from 'layout/document';
 import HouseSearchResult from './house_search_result';
-import LayoutWithSidebar from 'layout_with_sidebar';
+import LayoutWithSidebar from 'layout/layout_with_sidebar';
 import Input from 'form/input';
 
 export default class SearchResultDocument extends React.Component {

@@ -21,3 +21,9 @@ DoubleSidebarLayout.Center = class Center extends React.Component {
     return <div className="-center">{this.props.children}</div>;
   }
 }
+
+DoubleSidebarLayout.Content = class Content extends React.Component {
+  render() {
+    return <div className="-content">{this.props.children}</div>;
+  }
+}

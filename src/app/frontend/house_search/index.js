@@ -1,5 +1,6 @@
+import SearchResultDocument from './search_result_document';
+
 var app = express();
-var SearchResultDocument = require('./search_result_document');
 
 app.get('/', function (req, res) {
   res.send(SearchResultDocument.render({

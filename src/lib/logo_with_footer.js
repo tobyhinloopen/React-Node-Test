@@ -1,6 +1,6 @@
-var Logo = require('logo');
+import Logo from 'logo';
 
-class LogoWithFooter extends React.Component {
+export default class LogoWithFooter extends React.Component {
   render() {
     return (
       <div className="logo-with-footer">
@@ -10,5 +10,3 @@ class LogoWithFooter extends React.Component {
     );
   }
 }
-
-module.exports = LogoWithFooter;

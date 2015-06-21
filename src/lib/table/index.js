@@ -1,7 +1,7 @@
-var Thead = require('./thead');
-var Tbody = require('./tbody');
+import Thead from './thead';
+import Tbody from './tbody';
 
-module.exports = class Table extends React.Component {
+export default class Table extends React.Component {
   constructor(props) {
     super(props);
     this.state = { data: this.props.data };

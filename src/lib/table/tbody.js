@@ -1,4 +1,4 @@
-module.exports = class Tbody extends React.Component {
+export default class Tbody extends React.Component {
   constructor(props) {
     super(props);
     this.state = { data: this.props.data };

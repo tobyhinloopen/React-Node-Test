@@ -1,8 +1,8 @@
-var VerticalKeyValueEntry = require('vertical_key_value_entry');
-var PriceLabel = require('price_label');
-var Grid = require('grid');
+import VerticalKeyValueEntry from 'vertical_key_value_entry';
+import PriceLabel from 'price_label';
+import Grid from 'grid';
 
-module.exports = class HomeSearchResult extends React.Component {
+export default class HomeSearchResult extends React.Component {
   render() {
     return (
       <div className="house-search-result" data-wrap-link>

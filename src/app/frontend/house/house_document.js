@@ -1,10 +1,10 @@
-let Document = require('layout/document');
-let DoubleSidebarCenterPopupLayout = require('double_sidebar_center_popup_layout');
-let TransparentHeader = require('transparent_header');
-let LogoWithFooter = require('logo_with_footer');
-let StaticImageMap = require('static_image_map');
+import Document from 'layout/document';
+import DoubleSidebarCenterPopupLayout from 'double_sidebar_center_popup_layout';
+import TransparentHeader from 'transparent_header';
+import LogoWithFooter from 'logo_with_footer';
+import StaticImageMap from 'static_image_map';
 
-module.exports = class HouseDocument extends React.Component {
+export default class HouseDocument extends React.Component {
   render() {
     return (
       <Document title={this.props.title}>

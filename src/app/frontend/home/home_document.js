@@ -1,6 +1,6 @@
-var Document = require('layout/document');
+import Document from 'layout/document';
 
-module.exports = class HomeDocument extends React.Component {
+export default class HomeDocument extends React.Component {
   render() {
     return (
       <Document title={this.props.title}>

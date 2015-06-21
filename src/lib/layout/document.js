@@ -1,7 +1,6 @@
-var JavascriptLink = require('layout/javascript_link');
-var StylesheetLink = require('layout/stylesheet_link');
-var Grid = require('grid');
-var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
+import JavascriptLink from 'layout/javascript_link';
+import StylesheetLink from 'layout/stylesheet_link';
+import Grid from 'grid';
 
 class Document extends React.Component {
   render() {
@@ -18,6 +17,11 @@ class Document extends React.Component {
       </html>
     );
   }
+};
+
+let render = Document.render;
+Document.renderWithDoctype = function() {
+  return '<!DOCTYPE html>' + render.apply(this, arguments);
 };
 
 Document.defaultProps = {

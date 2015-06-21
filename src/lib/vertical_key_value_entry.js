@@ -1,6 +1,6 @@
-var Column = require('grid/column');
+import Column from 'grid/column';
 
-module.exports = class VerticalKeyValueEntry extends Column {
+export default class VerticalKeyValueEntry extends Column {
   render() {
     var classNames = this.getClassNames();
     classNames.push('vertical-key-value-entry');

@@ -1,4 +1,4 @@
-module.exports = class Column extends React.Component {
+export default class Column extends React.Component {
   getClassNames() {
     var classNames = [];
     if(this.props.xs) classNames.push('col-xs-'+this.props.xs);

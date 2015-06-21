@@ -1,6 +1,6 @@
-var app = express();
-var HouseDocument = require('./house_document');
+import HouseDocument from './house_document';
 
+var app = express();
 var HOUSES = [
   {
     id: 1,

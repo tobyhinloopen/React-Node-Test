@@ -1,4 +1,4 @@
-class ResponsiveImage extends React.Component {
+export default class ResponsiveImage extends React.Component {
   render() {
     var widths = Object.keys(this.props.versions).map(e => e|0).sort();
     var src = this.props.versions[widths[0]];
@@ -6,5 +6,3 @@ class ResponsiveImage extends React.Component {
     return <img src={src} srcSet={srcset} />;
   }
 }
-
-module.exports = ResponsiveImage;

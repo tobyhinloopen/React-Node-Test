@@ -1,6 +1,6 @@
 require('array_extensions');
 
-module.exports = class Thead extends React.Component {
+export default class Thead extends React.Component {
   constructor(props) {
     super(props);
     this.state = { data: this.props.data };

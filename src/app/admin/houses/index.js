@@ -1,5 +1,6 @@
-var app = express();
-var IndexDocument = require('./index_document');
+import IndexDocument from './index_document';
+
+let app = express();
 
 app.get('/', function (req, res) {
   res.send(IndexDocument.render({

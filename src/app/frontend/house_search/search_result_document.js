@@ -1,9 +1,9 @@
-var Document = require('layout/document');
-var HouseSearchResult = require('./house_search_result');
-var LayoutWithSidebar = require('layout_with_sidebar');
-var Input = require('form/input');
+import Document from 'layout/document';
+import HouseSearchResult from './house_search_result';
+import LayoutWithSidebar from 'layout_with_sidebar';
+import Input from 'form/input';
 
-module.exports = class SearchResultDocument extends React.Component {
+export default class SearchResultDocument extends React.Component {
   render() {
     return (
       <Document title={this.props.title}>

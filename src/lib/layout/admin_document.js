@@ -1,7 +1,7 @@
-var Document = require('./document');
-var Navbar = require('navbar');
+import Document from './document';
+import Navbar from 'navbar';
 
-module.exports = class AdminDocument extends React.Component {
+export default class AdminDocument extends React.Component {
   render() {
     return (
       <Document title={this.props.title}>

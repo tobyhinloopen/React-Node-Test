@@ -1,6 +1,6 @@
-let ResponsiveImage = require('responsive_image');
+import ResponsiveImage from 'responsive_image'
 
-class ResponsiveWildcardImage extends React.Component {
+export default class ResponsiveWildcardImage extends React.Component {
   render() {
     let versions = {};
     for(let width of this.props.widths)
@@ -8,5 +8,3 @@ class ResponsiveWildcardImage extends React.Component {
     return <ResponsiveImage versions={versions} />;
   }
 }
-
-module.exports = ResponsiveWildcardImage;

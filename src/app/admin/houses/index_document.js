@@ -1,7 +1,7 @@
-var AdminDocument = require('layout/admin_document');
-var HousesTable = require('./houses_table');
+import AdminDocument from 'layout/admin_document';
+import HousesTable from './houses_table';
 
-module.exports = class HomeDocument extends React.Component {
+export default class HomeDocument extends React.Component {
   render() {
     return (
       <AdminDocument title="Huizen" activeNav="admin.houses.index">

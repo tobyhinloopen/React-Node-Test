@@ -1,6 +1,6 @@
-var Grid = require('grid');
+import Grid from 'grid';
 
-class LayoutWithSidebar extends Grid.Row {};
+export default class LayoutWithSidebar extends Grid.Row {};
 
 LayoutWithSidebar.Sidebar = class Sidebar extends React.Component {
   render() {
@@ -14,4 +14,3 @@ LayoutWithSidebar.Content = class Content extends React.Component {
   }
 }
 
-module.exports = LayoutWithSidebar;

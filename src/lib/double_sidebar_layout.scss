@@ -2,7 +2,7 @@
 
 $border-color: #ddd;
 
-.double-sidebar-center-popup-layout {
+.double-sidebar-layout {
   @extend .row;
   background-color: #f6f6f6;
   overflow: hidden;
@@ -38,19 +38,19 @@ $border-color: #ddd;
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  .double-sidebar-center-popup-layout .-center {
+  .double-sidebar-layout .-center {
     padding: 8px 40px;
   }
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  .double-sidebar-center-popup-layout .-center {
+  .double-sidebar-layout .-center {
     padding: 10px 50px;
   }
 }
 
 @media screen and (min-width: $screen-lg-min) {
-  .double-sidebar-center-popup-layout .-center {
+  .double-sidebar-layout .-center {
     padding: 12px 60px;
   }
 }

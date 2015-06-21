@@ -3,7 +3,6 @@ import DoubleSidebarCenterPopupLayout from 'double_sidebar_center_popup_layout';
 import TransparentHeader from 'transparent_header';
 import LogoWithFooter from 'logo_with_footer';
 import StaticImageMap from 'static_image_map';
-import Grid from 'grid';
 
 export default class HouseDocument extends React.Component {
   render() {
@@ -11,9 +10,9 @@ export default class HouseDocument extends React.Component {
       <Document title={this.props.title}>
         <div className="house-document-gradient-background" />
         <TransparentHeader />
-        <DoubleSidebarCenterPopupLayout>
+        <DoubleSidebarLayout>
 
-          <DoubleSidebarCenterPopupLayout.Left>
+          <DoubleSidebarLayout.Left>
             <div className="house-document-sidebar-section">
               <LogoWithFooter />
             </div>
@@ -32,9 +31,9 @@ export default class HouseDocument extends React.Component {
             <div className="house-document-sidebar-menu-item">
               <a href="#fotos">{"Foto's"}</a>
             </div>
-          </DoubleSidebarCenterPopupLayout.Left>
+          </DoubleSidebarLayout.Left>
 
-          <DoubleSidebarCenterPopupLayout.Center>
+          <DoubleSidebarLayout.Center>
             <div className="house-document-content-section">
               <h1 id="de-woning">{this.props.house.label}</h1>
               <p className="lead">{this.props.house.summary}</p>
@@ -46,9 +45,9 @@ export default class HouseDocument extends React.Component {
               <h2 id="regio">Veel zwem en fiets mogelijkheden</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-          </DoubleSidebarCenterPopupLayout.Center>
+          </DoubleSidebarLayout.Center>
 
-          <DoubleSidebarCenterPopupLayout.Right>
+          <DoubleSidebarLayout.Right>
             <div className="house-document-sidebar-section-header">
               Groepsaccommodatie
             </div>
@@ -61,9 +60,10 @@ export default class HouseDocument extends React.Component {
             <div className="house-document-sidebar-section">
               <StaticImageMap width="320" height="384" scale="2" query={this.props.house.mapCenter} label="Teutoburgerwald" />
             </div>
-          </DoubleSidebarCenterPopupLayout.Right>
+          </DoubleSidebarLayout.Right>
 
-        </DoubleSidebarCenterPopupLayout>
+        </DoubleSidebarLayout>
+
       </Document>
     );
   }

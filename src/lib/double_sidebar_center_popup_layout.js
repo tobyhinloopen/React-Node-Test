@@ -1,4 +1,4 @@
-class DoubleSidebarCenterPopupLayout extends React.Component {
+export default class DoubleSidebarCenterPopupLayout extends React.Component {
   render() {
     return <div className="double-sidebar-center-popup-layout">{this.props.children}</div>
   }
@@ -21,5 +21,3 @@ DoubleSidebarCenterPopupLayout.Center = class Center extends React.Component {
     return <div className="-center">{this.props.children}</div>;
   }
 }
-
-module.exports = DoubleSidebarCenterPopupLayout;

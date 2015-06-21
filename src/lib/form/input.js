@@ -1,4 +1,4 @@
-class Input extends React.Component {
+export default class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: this.props.value };
@@ -14,5 +14,3 @@ class Input extends React.Component {
 }
 
 Input.defaultProps = { type: "text" };
-
-module.exports = Input;

@@ -1,4 +1,4 @@
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-default">
@@ -12,5 +12,3 @@ class Navbar extends React.Component {
 };
 
 Navbar.Item = require('./item');
-
-module.exports = Navbar;

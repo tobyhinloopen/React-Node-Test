@@ -1,4 +1,4 @@
-class StaticImageMap extends React.Component {
+export default class StaticImageMap extends React.Component {
   render() {
     var url = '//maps.googleapis.com/maps/api/staticmap?';
     url += `size=${this.props.width}x${this.props.height}&`;
@@ -26,5 +26,3 @@ class StaticImageMap extends React.Component {
     );
   }
 }
-
-module.exports = StaticImageMap;

@@ -15,7 +15,7 @@ start: assets $(JS_BUILD)
 	NODE_PATH=build/app:build/lib node build/server.js
 
 clean:
-	-rm -rf build/* assets/* .depend
+	-rm -rf build/* assets/* .depend dist/*
 	-mkdir -p build/assets
 
 depend: .depend
@@ -23,6 +23,9 @@ depend: .depend
 .depend: $(JS_SRC)
 	-rm .depend
 	ruby make_depend.rb > .depend
+
+dist/server.js: build/server.js
+	NODE_PATH=build/app:build/lib browserify --node build/server.js > dist/server.js
 
 assets/frontend.css: build/assets/frontend.postcss.css
 	-cp build/assets/frontend.postcss.css assets/frontend.css

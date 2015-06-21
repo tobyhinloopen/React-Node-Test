@@ -2,7 +2,7 @@ import JavascriptLink from 'layout/javascript_link';
 import StylesheetLink from 'layout/stylesheet_link';
 import Grid from 'grid';
 
-class Document extends React.Component {
+export default class Document extends React.Component {
   render() {
     return (
       <html>
@@ -29,5 +29,3 @@ Document.defaultProps = {
   javascripts: ["/frontend.js"],
   stylesheets: ["/frontend.css"]
 };
-
-module.exports = Document;

@@ -3,8 +3,8 @@
 ```
 npm install
 bower install
-grunt
-node server.js 3000
+make
+make start
 ```
 
 ## License

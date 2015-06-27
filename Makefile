@@ -22,7 +22,7 @@ depend: .depend
 
 .depend: $(JS_SRC)
 	-rm .depend
-	ruby make_depend.rb > .depend
+	ruby bin/make_depend.rb > .depend
 
 dist/server.js: build/server.js
 	NODE_PATH=build/app:build/lib browserify --node build/server.js > dist/server.js

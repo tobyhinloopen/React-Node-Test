@@ -6,7 +6,11 @@ app.use(require('morgan')('dev'));
 
 app.use(express.static('assets'));
 app.use(express.static('public'));
+
 app.use('/fonts/bootstrap', express.static('bower_components/bootstrap-sass/assets/fonts/bootstrap'));
+app.use('/', express.static('src/lib/font/cardo-regular'));
+app.use('/', express.static('src/lib/font/open-sans-bold'));
+app.use('/', express.static('src/lib/font/open-sans-regular'));
 
 app.use(require('cookie-parser')());
 

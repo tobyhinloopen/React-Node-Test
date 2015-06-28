@@ -3,7 +3,7 @@ import SearchResultDocument from './search_result_document';
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send(SearchResultDocument.render({
+  res.send(SearchResultDocument.renderWithDoctype({
     title: 'Zoekresultaten',
     results: [
       {

@@ -6,26 +6,17 @@ export default class Document extends React.Component {
   render() {
     return (
       <html>
-        <head>
-          <title>{this.props.title}</title>
-          {this.props.javascripts.map(src => <JavascriptLink src={src} key={src} />)}
-          {this.props.stylesheets.map(src => <StylesheetLink src={src} key={src} />)}
-        </head>
-        <body>
-          <Grid.Container>{this.props.children}</Grid.Container>
-        </body>
+        <title>{this.props.title}</title>
+        {this.props.javascripts.map(src => <JavascriptLink src={src} key={src} />)}
+        {this.props.stylesheets.map(src => <StylesheetLink src={src} key={src} />)}
+        <Grid.Container>{this.props.children}</Grid.Container>
       </html>
     );
   }
 };
 
-let render = Document.render;
-Document.renderWithDoctype = function() {
-  return '<!DOCTYPE html>' + render.apply(this, arguments);
-};
-
 Document.defaultProps = {
-  title: "",
-  javascripts: ["/frontend.js"],
-  stylesheets: ["/frontend.css"]
+  title: '',
+  javascripts: ['/frontend.js'],
+  stylesheets: ['/frontend.css']
 };

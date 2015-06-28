@@ -3,8 +3,9 @@ import Tbody from './tbody';
 
 export default class Table extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { data: this.props.data };
+    super({});
+    if(props.data)
+      this.state = { data: props.data };
   }
 
   render() {

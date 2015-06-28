@@ -1,10 +1,24 @@
 import IndexDocument from './index_document';
+import HouseFormDocument from './house_form_document';
 
 let app = express();
 
-app.get('/', function (req, res) {
-  res.send(IndexDocument.render({
-    title: "Huizen",
+app.get('/nieuw', (req, res) => {
+  res.send(HouseFormDocument.renderWithDoctype({
+    title: 'Huizen - Nieuw',
+    house: {
+      url: '',
+      code: '',
+      label: '',
+      beds: null,
+      bedrooms: null
+    }
+  }));
+});
+
+app.get('/', (req, res) => {
+  res.send(IndexDocument.renderWithDoctype({
+    title: 'Huizen',
     houses: [
       {
         id: 1,

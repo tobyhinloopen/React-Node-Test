@@ -26,7 +26,7 @@ function findHouseByPathName(pathName) {
 app.use('/', function (req, res, next) {
   var house;
   if(req.method == 'GET' && (house = findHouseByPathName(req.url)))
-    res.send(HouseDocument.render({ house: house, title: house.label }))
+    res.send(HouseDocument.renderWithDoctype({ house: house, title: house.label }))
   else
     next();
 });

@@ -3,6 +3,10 @@ import HouseFormDocument from './house_form_document';
 
 let app = express();
 
+app.post('/', (req, res) => {
+  console.log(req.params);
+});
+
 app.get('/nieuw', (req, res) => {
   res.send(HouseFormDocument.renderWithDoctype({
     title: 'Huizen - Nieuw',
